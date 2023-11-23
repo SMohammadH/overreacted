@@ -1,0 +1,52 @@
+:root {
+  --text: #222;
+  --bg: white;
+  --link: lab(39.365 45.745 -34.34);
+}
+
+html[data-theme="dark"] {
+  --text: rgba(255, 255, 255, 0.88);
+  --bg: rgb(40, 44, 53);
+  --link: lab(78.636 22.599 -30.44);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: auto;
+  max-width: 41rem;
+  background-color: var(--bg);
+  padding: 0 10px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  top: 0;
+  height: 130px;
+  justify-content: space-between;
+  margin-bottom: 20px;
+
+  h1 {
+    font-size: 24px;
+    font-weight: 900;
+  }
+}
+
+h1 {
+  color: var(--text);
+}
+
+p {
+  color: var(--text);
+  line-height: 24px;
+}
+
+a:link {
+  text-decoration: none;
+  color: var(--text);
+}
