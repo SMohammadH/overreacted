@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Getting Started
 
-First, run the development server:
+To install and run the project, you would need to <strong>clone</strong> the project's repository and then execute the following commands:
+`npm install` - This command will install all the required dependencies for the project.
+`npm run dev` - This command will start the project in development mode.
+Make sure you have Node.js and npm (Node Package Manager) installed on your system before running these commands.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## About This Project
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This project is a similar version of overreacted.io but uses jsonplaceholder as an API.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+#### Technologies in This Project:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- NextJS 14 with App Router
+  - React Server Components
+  - Async functions on the server side
+  - generateStaticParams to make server components static
+  - Dynamic routes
+  - Next cookies to persist theme value
+- Typescript
+- Sass Module
+  - Including variables for light/dark
+  - Persisted theme value
 
-## Learn More
+#### Technologies I didn't use:
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Redux: It doesn't work with App router as a theme state provider. I had to wrap the whole project in a Redux provider, so I should convert all static server components to client components then we will lose the whole benefits of using NextJS.
+- React Query: Although I wish I could use it, React Query was not required since the two fetching methods I used did not need advanced server management and caching. Caching and prefetching are already done by NextJS.
+- Testing: Implementing any testing libraries such as Jest and RTL, Cypress, Vitest to NextJS 14 with App Router requires a lot of configurations, which takes more than two days. (It would be easier in a pure React project.)
